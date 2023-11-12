@@ -1,0 +1,95 @@
+{% extends "main.html" %}
+{%block content%}
+{% load static %}
+<html lang="en">
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        img.flier {
+            width: 26%; /* Adjust the width as needed */
+            height: auto;
+            margin: 0 auto; 
+            display: block; 
+            box-shadow: 0px -3px 10px 1px #aaa;
+        }
+
+        .enquiries {
+            text-align: center;
+            margin: 20px;
+            color: #333;
+        }
+
+        .footer {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            box-shadow: 0px -3px 10px 1px #aaa;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-right: 40px;
+        }
+
+        img.logo {
+            width: 100px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .footer a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            display: block;
+            margin-top: 5px;
+        }
+
+        .gadetopia {
+            font-size: 28px;
+            color: #555;
+            margin-top: 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <img class="flier" src="{% static 'C:/Users/Lenovo/Ecomm/static/flier.jpg' %}">
+    <div class="enquiries">
+        <p>For more inquiries, give us a call on our hotline.</p>
+        <p>Send us a WhatsApp message, and we will get back to you as soon as possible.</p>
+        <p>Add us on Snapchat for more updates and promotions.</p>
+        <p class="gadetopia">Gadetopia! Affordable and Reliable</p>
+    </div>
+    <div class="footer">
+        <div class="contact-info">
+            <img class="logo" src="{% static 'C:\Users\Lenovo\Ecomm\static\snap.png' %}">
+            <a href="https://www.snapchat.com/add/pish100?sender_web_id=170328ea-1f2c-40bf-9024-25da8f500891&device_type=desktop&is_copy_url=true">Pish100</a>
+        </div>
+        <div class="contact-info">
+            <img class="logo" src="{% static 'C:\Users\Lenovo\Ecomm\static\whatsapp.png' %}">
+            <p>+233204445356</p>
+        </div>
+        <div class="contact-info">
+            <img class="logo" src="{% static 'C:\Users\Lenovo\Ecomm\static\mobile.png' %}">
+            <p>0248998717</p>
+        </div>
+    </div>
+    
+</body>
+</html>
+{%endblock content%}

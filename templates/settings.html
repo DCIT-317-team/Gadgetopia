@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+{% extends "main.html" %}
+{%block content%}
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Extended Settings Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        .setting {
+            margin: 20px 0;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .profile-pic {
+            display: block;
+            margin: 10px 0;
+        }
+
+        /* Additional Styles for profile picture section */
+        .profile-pic label {
+            cursor: pointer;
+            color: #007bff;
+            text-decoration: underline;
+            display: block;
+        }
+
+        #fileInput {
+            display: none;
+        }
+
+        #preview {
+            max-width: 150px;
+            max-height: 150px;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Settings</h1>
+
+        <div class="setting">
+            <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="Enter your username">
+        </div>
+
+        <div class="setting">
+            <label for="email">Email:</label>
+            <input type="text" id="email" placeholder="Enter your email">
+        </div>
+
+        <div class="setting">
+            <label for="notifications">Notifications:</label>
+            <input type="checkbox" id="notifications" checked> Receive notifications
+        </div>
+
+        <div class="setting">
+            <label for="password">Change Password:</label>
+            <input type="password" id="password" placeholder="Enter new password">
+        </div>
+
+        <div class="setting profile-pic">
+            <label for="fileInput">Change Profile Picture:</label>
+            <input type="file" id="fileInput" accept="image/*">
+            <img id="preview" src="" alt="Profile Picture">
+        </div>
+
+        <button>Save Settings</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const fileInput = document.getElementById('fileInput');
+            const preview = document.getElementById('preview');
+
+            fileInput.addEventListener('change', function(event) {
+                const file = event.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        preview.src = e.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+{%endblock content%}
